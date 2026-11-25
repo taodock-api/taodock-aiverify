@@ -101,6 +101,8 @@ class CatalogAuditTest(unittest.TestCase):
             request.assert_not_called()
             self.assertEqual(result["output"], totals)
             self.assertEqual(result["testArguments"]["testDataset"], SAMPLE.name)
+            self.assertEqual(result["testArguments"]["groundTruthDataset"], SAMPLE.name)
+            self.assertEqual(result["testArguments"]["groundTruth"], "measurements")
             self.assertNotIn("Navy blue stainless steel bottle", json.dumps(result))
 
 

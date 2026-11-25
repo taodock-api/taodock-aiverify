@@ -128,6 +128,9 @@ def score(source, target):
         "timeTaken": round(monotonic() - timer, 6),
         "testArguments": {
             "testDataset": source.name,
+            # Toolkit 2.2.2 requires a ground-truth dataset record on imported results.
+            "groundTruthDataset": source.name,
+            "groundTruth": "measurements",
             "mode": "upload",
             "modelType": "classification",
             "modelFile": "Taodock catalog copy - pre-generated drafts.txt",
