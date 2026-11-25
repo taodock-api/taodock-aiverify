@@ -1,0 +1,8 @@
+{
+  "cid": "catalog_copy_findings",
+  "name": "Catalog Copy Findings",
+  "version": "0.1.0",
+  "description": "Summarise the audit and show the measurement or phrase each flagged SKU needs reviewed.",
+  "widgetSize": {"minW": 6, "minH": 6, "maxW": 12, "maxH": 36},
+  "dependencies": [{"cid": "catalog_copy_audit"}]
+}

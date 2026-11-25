@@ -1,0 +1,8 @@
+{
+  "gid": "taodock.catalog-copy-audit",
+  "name": "Taodock Catalog Copy Audit",
+  "version": "0.1.0",
+  "author": "Taodock",
+  "description": "Check AI-drafted English product listings against approved measurements and required phrases, then review per-SKU findings in AI Verify.",
+  "tags": ["e-commerce", "product listings", "factual consistency"]
+}

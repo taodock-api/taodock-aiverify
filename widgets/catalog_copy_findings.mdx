@@ -1,0 +1,45 @@
+export const issueLabel = {
+  empty_draft: 'Draft is empty',
+  missing_measurement: 'Expected measurement missing',
+  unlisted_measurement: 'Measurement absent from specifications',
+  missing_phrase: 'Required phrase missing',
+}
+
+export function Findings({ result }) {
+  if (!result) {
+    return <p>Select a Catalog Copy Audit test result to view the findings.</p>
+  }
+
+  return (
+    <section style={{ padding: 16, overflowWrap: 'anywhere' }}>
+      <h3>Catalog copy audit</h3>
+      <p><strong>{result.total}</strong> checked · <strong>{result.passed}</strong> passed · <strong>{result.flagged}</strong> flagged</p>
+      <p>Review these findings against the approved product specifications before publishing.</p>
+      {result.findings.length === 0 ? (
+        <p>No measurements or required phrases were flagged by the configured checks.</p>
+      ) : (
+        <table style={{ width: '100%', textAlign: 'left', verticalAlign: 'top' }}>
+          <thead><tr><th scope="col">SKU</th><th scope="col">Findings</th></tr></thead>
+          <tbody>
+            {result.findings.map(({ sku, issues }) => (
+              <tr key={sku}>
+                <th scope="row" style={{ verticalAlign: 'top' }}>{sku}</th>
+                <td>
+                  <ul>
+                    {issues.map(({ kind, value }) => (
+                      <li key={kind + ':' + value}>
+                        {issueLabel[kind]}{value ? ': ' + value : ''}
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </section>
+  )
+}
+
+<Findings result={props.getResults('catalog_copy_audit')} />

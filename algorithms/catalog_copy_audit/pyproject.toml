@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "taodock-catalog-copy-audit"
+description = "Deterministic product copy checks for AI Verify Toolkit"
+requires-python = ">=3.10"
+dynamic = ["version"]
+license = "MIT"
+authors = [{ name = "Taodock" }]
+dependencies = ["aiverify-test-engine>=2.2.1,<2.3"]
+
+[tool.hatch.version]
+path = "taodock_catalog_copy_audit/algo.meta.json"
+pattern = '"version":\s*"(?P<version>[^"]+)"'

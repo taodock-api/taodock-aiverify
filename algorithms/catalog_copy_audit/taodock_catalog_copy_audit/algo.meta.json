@@ -1,0 +1,11 @@
+{
+  "gid": "taodock.catalog-copy-audit",
+  "cid": "catalog_copy_audit",
+  "name": "Catalog Copy Audit",
+  "version": "0.1.0",
+  "author": "Taodock",
+  "description": "Compare pre-generated English product copy with measurements and required phrases from approved specifications.",
+  "modelType": ["classification"],
+  "requireGroundTruth": false,
+  "tags": ["catalog", "factual consistency"]
+}
